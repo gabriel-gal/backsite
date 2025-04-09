@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #E3E3E3;
+    --background-form-color: #cfcfcf;
+    --primary-color: #071641;
+    --text-secundary: #555;
+    --lucide-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 70px 1fr 50px;
+    background-color: var(--background-color);
+}
+
+header,
+footer {
+    background-color: var(--primary-color);
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+header img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* MAIN */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    padding: 40px 120px 40px 120px;
+    gap: 40px;
+}
+
+/* MAIN INFO */
+
+
+main .info {
+    background-color: #f5f7fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    padding: 40px 60px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+main .info h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-family: var(--lucide-font);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+main .info p {
+    font-size: 1.2rem;
+    color: var(--text-secundary);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.info ul li {
+    background-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* MAIN FORM */
+
+main .formulario {
+    background-color: var(--background-form-color);
+    border-radius: 20px;
+    padding: 15px 30px;
+    max-height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .formulario h2 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-family: var(--lucide-font);
+    margin-bottom: 20px;
+}
+
+main .formulario form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.col-span-2 {
+    grid-column: span 2;
+}
+
+main .formulario form div {
+    display: flex;
+    flex-direction: column;
+}
+
+main .formulario form div label {
+    font-family: var(--lucide-font);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+main .formulario form div input {
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s
+}
+
+main .formulario form div input:focus {
+    border-color: #405ca9;
+}
+
+main .formulario form button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #ccc;
+    color: #ccc;
+    background-color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+footer p:first-child {
+    font-weight: bolder;
+}
+
+/* ------------------- RESPONSIVO ------------------- */
+
+@media (max-width: 1300px) {
+    main {
+        padding: 40px 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    main .info {
+        padding: 20px;
+    }
+
+    main .formulario {
+        padding: 20px 50px;
+    }
+
+    main .formulario form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    header img {
+        max-width: 150px;
+    }
+
+    main {
+        padding: 40px 20px;
+    }
+
+    main .info h1 {
+        font-size: 1.5rem;
+    }
+
+    main .info p,
+    .info ul li {
+        font-size: 1rem;
+    }
+
+    main .formulario h2 {
+        font-size: 1.2rem;
+    }
+
+    main .formulario form div label {
+        font-size: 1rem;
+    }
+
+    main .formulario form button {
+        font-size: 1rem;
+    }
+
+    main .formulario form {
+        grid-template-columns: 1fr;
+    }
+    
+    .col-span-2 {
+        grid-column: auto;
+    }
+}
